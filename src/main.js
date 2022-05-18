@@ -5,6 +5,8 @@ import store from './store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import 'font-awesome/css/font-awesome.css'
+import '@/assets/global.css'
+
 
 import {postRequest} from "./utils/api";
 import {putRequest} from "./utils/api";
@@ -38,7 +40,7 @@ router.beforeEach((to, from, next) => {
         }
         next();
     } else {
-        if (to.path == '/') {
+        if (to.path === '/') {
             next();
         } else {
             next('/?redirect=' + to.path);
